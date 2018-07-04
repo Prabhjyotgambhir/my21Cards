@@ -1,0 +1,11 @@
+<div class="container">
+    <div class="row">
+        <h1 class="col-md-12 text-center">Choose a card by selecting it or just memorising it</h1>
+        <div *ngFor="let card of cardList" class="col-1">
+            <app-card [cardDetail]="card"></app-card>
+        </div>
+    </div>
+</div>
+<div class="col-md-12 text-center" >
+        <button mat-raised-button color="primary" (click)="startMagic()">Start</button>
+</div>
