@@ -11,6 +11,7 @@ import {MatCardModule} from '@angular/material';
 import {MatButtonModule} from '@angular/material/button';
 import { StartComponent } from './start/start.component';
 import { RouterModule } from '@angular/router';
+import {MatIconModule} from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { RouterModule } from '@angular/router';
     MatGridListModule,
     MatCardModule,
     MatButtonModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    MatIconModule
   ],
   providers: [CardService],
   bootstrap: [AppComponent]

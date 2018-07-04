@@ -1,16 +1,37 @@
-<div class="container">
+<div class="container" *ngIf="!magicCard">
   <div class="row">
-    <div *ngFor="let card of cardList" class="col-4 text-center" style="position: relative;top:20%">
+    <div *ngFor="let card of cardList" class="col-4 " style="position: relative;top:20%">
       <app-card [cardDetail]="card"></app-card>
     </div>
-    <div class="col-4 text-center">
-      <button mat-button (click)="checkFirstDeck()">This</button>
+    <div class="col-4">
+      <button mat-icon-button (click)="selectedColumn(1)"><mat-icon>arrow_upward</mat-icon></button>
     </div>
-    <div class="col-4 text-center">
-        <button mat-button (click)="checkSecondDeck()">This</button>
+    <div class="col-4">
+        <button mat-icon-button (click)="selectedColumn(2)"><mat-icon>arrow_upward</mat-icon></button>
       </div>
-    <div class="col-4 text-center">
-        <button mat-button (click)="checkThirdDeck()">This</button>
+    <div class="col-4">
+        <button mat-icon-button (click)="selectedColumn(3)"><mat-icon>arrow_upward</mat-icon></button>
       </div>
+      <hr style="padding: 10px 5px">
+      <div class="col-md-12 text-center">
+        <button mat-raised-button (click)="submit()" [disabled]="!selectedDeck" color="accent">Submit</button>
+      </div>
+  </div>
+</div>
+
+
+<div *ngIf="magicCard" class="container" style="position:absolute;left:0;top:0;bottom:0;right:0;margin:auto;height:max-content">
+  <div class="row">
+    <div class="text-center col-md-12" style="color:white">
+        Your Magic Card is 
+    </div>
+    <div class="text-center col-md-12">
+        <app-card [cardDetail]="magicCard"></app-card>
+    </div>
+    <div class="text-center col-md-12">
+      <button mat-raised-button color="accent" (click)="startAgain()">
+        Start Again
+      </button>
+    </div>
   </div>
 </div>

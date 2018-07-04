@@ -9,3 +9,19 @@
     line-height: 30px !important;
     font-size: 30px !important;
 }
+
+button {
+    color: white;
+}
+
+.col-4:nth-child(3n+1) {
+    text-align:right;
+}
+
+.col-4:nth-child(3n+2) {
+    text-align:center;
+}
+
+.col-4:nth-child(3n+3) {
+    text-align:left;
+}
