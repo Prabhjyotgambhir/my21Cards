@@ -1,3 +1,4 @@
+import { CardService } from './services/card.service';
 import { routes } from './app-routing.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -26,7 +27,7 @@ import { RouterModule } from '@angular/router';
     MatButtonModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [],
+  providers: [CardService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

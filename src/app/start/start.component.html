@@ -1,13 +1,16 @@
 <div class="container">
   <div class="row">
-    <div class="col-md-4">
-
+    <div *ngFor="let card of cardList" class="col-4 text-center" style="position: relative;top:20%">
+      <app-card [cardDetail]="card"></app-card>
     </div>
-    <div class="col-md-4">
-
+    <div class="col-4 text-center">
+      <button mat-button (click)="checkFirstDeck()">This</button>
     </div>
-    <div class="col-md-4">
-
-    </div>
+    <div class="col-4 text-center">
+        <button mat-button (click)="checkSecondDeck()">This</button>
+      </div>
+    <div class="col-4 text-center">
+        <button mat-button (click)="checkThirdDeck()">This</button>
+      </div>
   </div>
 </div>

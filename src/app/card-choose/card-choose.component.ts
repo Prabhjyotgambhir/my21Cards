@@ -1,3 +1,4 @@
+import { CardService } from './../services/card.service';
 import { Component, OnInit } from '@angular/core';
 import { Card } from './../models/card';
 import { Router } from '@angular/router';
@@ -9,29 +10,11 @@ import { Router } from '@angular/router';
 })
 export class CardChooseComponent implements OnInit {
   cardList: Card[] = [];
-  constructor(private router: Router) { }
+  constructor(private router: Router, private cardService: CardService) { }
 
   ngOnInit() {
-    this.generateCard();
+    this.cardList = this.cardService.generateCard();
   }
-
-  generateCard() {
-    for ( let i = 1; i <= 21; i++ ) {
-      if ( i < 11) {
-        this.cardList.push({
-          id: i,
-          value: i,
-          type: 'spade'
-        });
-      } else {
-        this.cardList.push({
-          id: i - 10,
-          value: i - 10,
-          type: 'heart'
-        });
-      }
-    }
-    }
 
   startMagic() {
     this.router.navigate(['start']);
